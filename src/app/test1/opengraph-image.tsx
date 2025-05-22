@@ -1,8 +1,8 @@
 import { ImageResponse } from 'next/og';
 
 export const size = {
-    width: 300,
-    height: 300,
+    width: 1200,
+    height: 600,
 };
 
 export const contentType = 'image/png';
@@ -13,7 +13,6 @@ export default async function DynamicImage() {
     const cardStyle = {
         position: 'absolute' as any,
         top: '4px',
-        left: '26px',
         display: 'flex',
         flexDirection: 'column' as any,
         gap: '20px',
@@ -22,7 +21,6 @@ export default async function DynamicImage() {
         padding: '20px',
         borderRadius: '32px',
         backgroundColor: '#0E0E0E',
-        rotate: '-5deg',
     };
 
     const cardTextStyle = {
@@ -38,7 +36,7 @@ export default async function DynamicImage() {
                     position: 'relative',
                     display: 'flex',
                     flexDirection: 'column',
-                    width: '296px',
+                    width: '636px',
                     backgroundColor: '#000000',
                 }}
             >
@@ -57,23 +55,23 @@ export default async function DynamicImage() {
                     }}
                 />
 
-                <div style={cardStyle}>
+                <div style={{ left: '18px', rotate: '-5deg', ...cardStyle }}>
                     <img
                         src={poll.variant1ImageIconUrl}
                         width={110}
                         height={82}
-                        style={{ borderRadius: '4px' }}
+                        style={{ borderRadius: '12px' }}
                     />
 
                     <p style={cardTextStyle}>{poll.variant1Answer}</p>
                 </div>
 
-                <div style={cardStyle}>
+                <div style={{ right: '18px', rotate: '5deg', ...cardStyle }}>
                     <img
                         src={poll.variant2ImageIconUrl}
                         width={110}
                         height={82}
-                        style={{ borderRadius: '4px' }}
+                        style={{ borderRadius: '12px' }}
                     />
 
                     <p style={cardTextStyle}>{poll.variant2Answer}</p>
