@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { ImageResponse } from 'next/og';
 
 export const size = {
@@ -57,9 +56,8 @@ export default async function DynamicImage() {
                 />
 
                 <div style={cardStyle}>
-                    <Image
+                    <img
                         src={poll.variant1ImageIconUrl}
-                        alt=""
                         width={110}
                         height={82}
                         style={{ borderRadius: '4px' }}
@@ -69,9 +67,8 @@ export default async function DynamicImage() {
                 </div>
 
                 <div style={cardStyle}>
-                    <Image
+                    <img
                         src={poll.variant2ImageIconUrl}
-                        alt=""
                         width={110}
                         height={82}
                         style={{ borderRadius: '4px' }}
