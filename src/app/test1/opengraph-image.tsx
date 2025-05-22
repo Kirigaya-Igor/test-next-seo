@@ -1,18 +1,19 @@
 import { ImageResponse } from 'next/og';
 
-// Image metadata
 export const size = {
     width: 1200,
-    height: 630,
+    height: 600,
 };
 
 export const contentType = 'image/png';
 
-// Image generation
 export default async function Image() {
+    const poll = await fetch(`https://backend.voicecoin.co/api/polls/7`).then((res) => res.json());
+
+    console.log('product AAAAAAAAAAAAAAA', poll);
+
     return new ImageResponse(
         (
-            // ImageResponse JSX element
             <div
                 style={{
                     fontSize: 128,
