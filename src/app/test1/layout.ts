@@ -1,14 +1,14 @@
 export async function generateMetadata() {
     return {
-        title: 'Test1 Title',
+        title: 'Test1 title',
         description: 'Test1',
         openGraph: {
-            title: 'Test1',
+            title: 'Test1 title',
             images: 'https://is-next-seo.netlify.app/test1/opengraph-image',
             // images: 'https://is-next-seo.netlify.app/test1.jpg',
         },
         twitter: {
-            title: 'Test1',
+            title: 'Test1 title',
             images: 'https://is-next-seo.netlify.app/test1/opengraph-image',
             // images: 'https://is-next-seo.netlify.app/test1.jpg',
             card: 'summary_large_image',
