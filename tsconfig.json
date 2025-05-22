@@ -1,0 +1,34 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "skipLibCheck": true,
+        "strict": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "jsx": "preserve",
+        "sourceMap": false,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "baseUrl": "./src",
+        "importHelpers": true,
+        "noUnusedLocals": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "declaration": false,
+        "typeRoots": ["src/types/**/*.d.ts", "node_modules/@types"],
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ],
+        "allowJs": true,
+        "noEmit": true,
+        "incremental": true,
+        "isolatedModules": true
+    },
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "next.config.js"],
+    "exclude": ["node_modules", "**/*.js", "**/*.spec.ts", "**/*.spec.tsx"]
+}

@@ -1,0 +1,1 @@
+rsync -az --progress /Users/henker/WORKSPACE/VOICE/voice-coin-next/deploy/ root@157.180.41.90:/root/project/frontend/nextjs-frontend/deploy/
