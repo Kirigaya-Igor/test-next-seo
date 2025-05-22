@@ -14,18 +14,18 @@ export default async function DynamicImage() {
         position: 'absolute' as any,
         display: 'flex',
         flexDirection: 'column' as any,
-        gap: '16px',
-        width: '180px',
-        height: '264px',
-        padding: '10px',
-        borderRadius: '16px',
+        gap: '20px',
+        width: '300px',
+        height: '440px',
+        padding: '20px',
+        borderRadius: '32px',
         backgroundColor: '#0E0E0E',
     };
 
     const cardTextStyle = {
-        fontSize: '14px',
+        fontSize: '24px',
         fontWeight: '600',
-        lineHeight: '16px',
+        lineHeight: '30px',
         color: '#ffffff',
     };
 
@@ -37,34 +37,34 @@ export default async function DynamicImage() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    width: '400px',
-                    height: '400px',
+                    width: '100%',
+                    height: '100%',
                     backgroundColor: '#000000',
                 }}
             >
                 <div
                     style={{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        width: '400px',
+                        height: '400px',
+                        background:
+                            'linear-gradient(232.13deg, #fdb99b 0%, #cf8bf3 50%, #a770ef 100%) border-box',
+                        borderRadius: '50%',
+                        filter: 'blur(50px)',
+                        transform: 'translate(-50%, -50%)',
+                    }}
+                />
+
+                <div
+                    style={{
                         position: 'relative',
                         display: 'flex',
-                        width: '375px',
-                        height: '280px',
+                        width: '636px',
+                        height: '464px',
                     }}
                 >
-                    <div
-                        style={{
-                            position: 'absolute',
-                            top: '50%',
-                            left: '50%',
-                            width: '300px',
-                            height: '300px',
-                            background:
-                                'linear-gradient(232.13deg, #fdb99b 0%, #cf8bf3 50%, #a770ef 100%) border-box',
-                            borderRadius: '50%',
-                            filter: 'blur(60px)',
-                            transform: 'translate(-50%, -50%)',
-                        }}
-                    />
-
                     <div
                         style={{
                             top: '8px',
@@ -75,7 +75,7 @@ export default async function DynamicImage() {
                     >
                         <img
                             src={poll.variant1ImageIconUrl}
-                            style={{ width: '100%', height: '118px', borderRadius: '12px' }}
+                            style={{ width: '100%', height: '190px', borderRadius: '12px' }}
                         />
 
                         <p style={cardTextStyle}>{poll.variant1Answer}</p>
@@ -91,7 +91,7 @@ export default async function DynamicImage() {
                     >
                         <img
                             src={poll.variant2ImageIconUrl}
-                            style={{ width: '100%', height: '118px', borderRadius: '12px' }}
+                            style={{ width: '100%', height: '190px', borderRadius: '12px' }}
                         />
 
                         <p style={cardTextStyle}>{poll.variant2Answer}</p>
