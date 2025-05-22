@@ -4,15 +4,14 @@ export async function generateMetadata() {
         description: 'Test1',
         openGraph: {
             title: 'Test1 title',
-            images: 'https://is-next-seo.netlify.app/test1/opengraph-image',
             // images: 'https://is-next-seo.netlify.app/test1.jpg',
         },
         twitter: {
             title: 'Test1 title',
-            images: 'https://is-next-seo.netlify.app/test1/opengraph-image',
             // images: 'https://is-next-seo.netlify.app/test1.jpg',
             card: 'summary_large_image',
         },
+        metadataBase: new URL('https://is-next-seo.netlify.app'),
     };
 }
 
