@@ -31,39 +31,6 @@ export default async function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <head>
-                <link rel="icon" href="/favicon.svg" sizes="any" />
-
-                <meta name="robots" content="index, follow" />
-
-                {/*    
-                <!-- описание сайта используется роботами и подставляется в описании к ссылкам в соцсетях -->
-                <meta
-                    name="description"
-                    content=""
-                />
-
-                <meta
-                    name="keywords"
-                    content="voice, coin, voice coin, vote, vote coin, poll, polls, mem, mem-coin, defi, farm, lend, yield, apy, inside, decentralized, crypto, cryptocorrency, invest, investments, passive income"
-                />
-                <meta
-                    property="og:title"
-                    content=""
-                />
-                <meta
-                    property="og:description"
-                    content=""
-                />
-                <meta property="og:image:type" content="image/jpeg" />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://voice.io" />
-                <meta property="og:site_name" content="Voice Coin" /> */}
-
-                {/* Internet Explorer optimization */}
-                <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-            </head>
-
             <body className={`${geistSans.variable}`}>
                 <ProvidersWrapper>{children}</ProvidersWrapper>
             </body>
