@@ -1,8 +1,8 @@
 import { ImageResponse } from 'next/og';
 
 export const size = {
-    width: 1200,
-    height: 600,
+    width: 400,
+    height: 400,
 };
 
 export const contentType = 'image/png';
@@ -35,42 +35,53 @@ export default async function DynamicImage() {
                 style={{
                     position: 'relative',
                     display: 'flex',
-                    flexDirection: 'column',
-                    width: '375px',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '100%',
+                    height: '100%',
                     backgroundColor: '#000000',
                 }}
             >
                 <div
                     style={{
-                        position: 'absolute',
-                        top: '130px',
-                        left: '50%',
-                        width: '200px',
-                        height: '200px',
-                        background:
-                            'linear-gradient(232.13deg, #fdb99b 0%, #cf8bf3 50%, #a770ef 100%) border-box',
-                        borderRadius: '50%',
-                        filter: 'blur(60px)',
-                        transform: 'translate(-50%, -50%)',
+                        position: 'relative',
+                        display: 'flex',
+                        width: '375px',
+                        height: '280px',
                     }}
-                />
-
-                <div style={{ left: '18px', transform: 'rotate(-5deg)', ...cardStyle }}>
-                    <img
-                        src={poll.variant1ImageIconUrl}
-                        style={{ width: '100%', height: '118px', borderRadius: '12px' }}
+                >
+                    <div
+                        style={{
+                            position: 'absolute',
+                            top: '130px',
+                            left: '50%',
+                            width: '200px',
+                            height: '200px',
+                            background:
+                                'linear-gradient(232.13deg, #fdb99b 0%, #cf8bf3 50%, #a770ef 100%) border-box',
+                            borderRadius: '50%',
+                            filter: 'blur(60px)',
+                            transform: 'translate(-50%, -50%)',
+                        }}
                     />
 
-                    <p style={cardTextStyle}>{poll.variant1Answer}</p>
-                </div>
+                    <div style={{ left: '18px', transform: 'rotate(-5deg)', ...cardStyle }}>
+                        <img
+                            src={poll.variant1ImageIconUrl}
+                            style={{ width: '100%', height: '118px', borderRadius: '12px' }}
+                        />
 
-                <div style={{ right: '18px', transform: 'rotate(5deg)', ...cardStyle }}>
-                    <img
-                        src={poll.variant2ImageIconUrl}
-                        style={{ width: '100%', height: '118px', borderRadius: '12px' }}
-                    />
+                        <p style={cardTextStyle}>{poll.variant1Answer}</p>
+                    </div>
 
-                    <p style={cardTextStyle}>{poll.variant2Answer}</p>
+                    <div style={{ right: '18px', transform: 'rotate(5deg)', ...cardStyle }}>
+                        <img
+                            src={poll.variant2ImageIconUrl}
+                            style={{ width: '100%', height: '118px', borderRadius: '12px' }}
+                        />
+
+                        <p style={cardTextStyle}>{poll.variant2Answer}</p>
+                    </div>
                 </div>
             </div>
         ),
