@@ -1,14 +1,14 @@
 export async function generateMetadata() {
     return {
-        title: 'Test Title, aaa bbb ccc',
-        description: 'Описание страницы Test2',
+        title: 'Test1 Title',
+        description: 'Test1',
         openGraph: {
-            title: 'Test Title, aaa bbb ccc',
-            images: 'https://img.freepik.com/free-photo/anime-eyes-illustration_23-2151660487.jpg?semt=ais_hybrid&w=740',
+            title: 'Test1',
+            images: '/test1',
         },
         twitter: {
-            title: 'Test Title, aaa bbb ccc',
-            images: 'https://img.freepik.com/free-photo/anime-eyes-illustration_23-2151660487.jpg?semt=ais_hybrid&w=740',
+            title: 'Test1',
+            images: '/test1',
             card: 'summary_large_image',
         },
     };
