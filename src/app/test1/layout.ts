@@ -1,6 +1,6 @@
 export async function generateMetadata() {
     return {
-        metadataBase: new URL('https://is-next-seo1.netlify.app'),
+        metadataBase: new URL('https://is-next-seo.netlify.app'),
         title: 'Test1 title',
         description: 'Test1',
         openGraph: {
