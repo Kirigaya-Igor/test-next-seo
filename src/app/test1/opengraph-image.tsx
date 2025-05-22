@@ -1,8 +1,8 @@
 import { ImageResponse } from 'next/og';
 
 export const size = {
-    width: 1200,
-    height: 600,
+    width: 300,
+    height: 300,
 };
 
 export const contentType = 'image/png';
@@ -25,7 +25,7 @@ export default async function DynamicImage() {
         rotate: '-5deg',
     };
 
-    const cardText = {
+    const cardTextStyle = {
         fontSize: '12px',
         fontWeight: '600',
         lineHeight: '14px',
@@ -65,7 +65,7 @@ export default async function DynamicImage() {
                         style={{ borderRadius: '4px' }}
                     />
 
-                    <p style={cardText}>Yes</p>
+                    <p style={cardTextStyle}>{poll.variant1Answer}</p>
                 </div>
 
                 <div style={cardStyle}>
@@ -76,20 +76,8 @@ export default async function DynamicImage() {
                         style={{ borderRadius: '4px' }}
                     />
 
-                    <p style={cardText}>No</p>
+                    <p style={cardTextStyle}>{poll.variant2Answer}</p>
                 </div>
-
-                <p
-                    style={{
-                        marginTop: '210px',
-                        fontSize: '16px',
-                        fontWeight: '400',
-                        lineHeight: '24px',
-                        textAlign: 'center',
-                    }}
-                >
-                    {poll.title}
-                </p>
             </div>
         ),
     );
