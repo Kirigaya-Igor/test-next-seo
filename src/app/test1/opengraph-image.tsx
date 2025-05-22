@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { ImageResponse } from 'next/og';
 
 export const size = {
@@ -7,26 +8,89 @@ export const size = {
 
 export const contentType = 'image/png';
 
-export default async function Image() {
+export default async function DynamicImage() {
     const poll = await fetch(`https://backend.voicecoin.co/api/polls/7`).then((res) => res.json());
 
-    console.log('product AAAAAAAAAAAAAAA', poll.variant1ImageIconUrl);
-    console.log('product BBBBBBBBBBBBBBB', poll.variant1ImageIconUrl);
+    const cardStyle = {
+        position: 'absolute' as any,
+        top: '4px',
+        left: '26px',
+        display: 'flex',
+        flexDirection: 'column' as any,
+        gap: '10px',
+        width: '128px',
+        height: '190px',
+        padding: '8px',
+        borderRadius: '12px',
+        backgroundColor: '#0E0E0E',
+        rotate: '-5deg',
+    };
+
+    const cardText = {
+        fontSize: '12px',
+        fontWeight: '600',
+        lineHeight: '14px',
+    };
 
     return new ImageResponse(
         (
             <div
                 style={{
-                    fontSize: 128,
-                    background: 'white',
-                    width: '100%',
-                    height: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    position: 'relative',
+                    width: '296px',
+                    backgroundColor: '#000000',
                 }}
             >
-                test BBBBBBBBBBBBBBB
+                <div
+                    style={{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        width: '120px',
+                        height: '120px',
+                        background:
+                            'linear-gradient(232.13deg, #fdb99b 0%, #cf8bf3 50%, #a770ef 100%) border-box',
+                        borderRadius: '50%',
+                        filter: 'blur(60px)',
+                        transform: 'translate(-50%, -50%)',
+                    }}
+                />
+
+                <div style={cardStyle}>
+                    <Image
+                        src={poll.variant1ImageIconUrl}
+                        alt=""
+                        width={110}
+                        height={82}
+                        style={{ borderRadius: '4px' }}
+                    />
+
+                    <p style={cardText}>Yes</p>
+                </div>
+
+                <div style={cardStyle}>
+                    <Image
+                        src={poll.variant2ImageIconUrl}
+                        alt=""
+                        width={110}
+                        height={82}
+                        style={{ borderRadius: '4px' }}
+                    />
+
+                    <p style={cardText}>No</p>
+                </div>
+
+                <p
+                    style={{
+                        marginTop: '210px',
+                        fontSize: '16px',
+                        fontWeight: '400',
+                        lineHeight: '24px',
+                        textAlign: 'center',
+                    }}
+                >
+                    {poll.title}
+                </p>
             </div>
         ),
     );
