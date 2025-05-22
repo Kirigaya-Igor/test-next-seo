@@ -15,18 +15,18 @@ export default async function DynamicImage() {
         top: '4px',
         display: 'flex',
         flexDirection: 'column' as any,
-        gap: '20px',
-        width: '300px',
-        height: '440px',
-        padding: '20px',
-        borderRadius: '32px',
+        gap: '16px',
+        width: '180px',
+        height: '264px',
+        padding: '10px',
+        borderRadius: '16px',
         backgroundColor: '#0E0E0E',
     };
 
     const cardTextStyle = {
-        fontSize: '12px',
+        fontSize: '14px',
         fontWeight: '600',
-        lineHeight: '14px',
+        lineHeight: '16px',
     };
 
     return new ImageResponse(
@@ -36,17 +36,17 @@ export default async function DynamicImage() {
                     position: 'relative',
                     display: 'flex',
                     flexDirection: 'column',
-                    width: '636px',
+                    width: '375px',
                     backgroundColor: '#000000',
                 }}
             >
                 <div
                     style={{
                         position: 'absolute',
-                        top: '50%',
+                        top: '130px',
                         left: '50%',
-                        width: '120px',
-                        height: '120px',
+                        width: '200px',
+                        height: '200px',
                         background:
                             'linear-gradient(232.13deg, #fdb99b 0%, #cf8bf3 50%, #a770ef 100%) border-box',
                         borderRadius: '50%',
@@ -55,23 +55,19 @@ export default async function DynamicImage() {
                     }}
                 />
 
-                <div style={{ left: '18px', rotate: '-5deg', ...cardStyle }}>
+                <div style={{ left: '18px', transform: 'rotate(-5deg)', ...cardStyle }}>
                     <img
                         src={poll.variant1ImageIconUrl}
-                        width={110}
-                        height={82}
-                        style={{ borderRadius: '12px' }}
+                        style={{ width: '100%', height: '118px', borderRadius: '12px' }}
                     />
 
                     <p style={cardTextStyle}>{poll.variant1Answer}</p>
                 </div>
 
-                <div style={{ right: '18px', rotate: '5deg', ...cardStyle }}>
+                <div style={{ right: '18px', transform: 'rotate(5deg)', ...cardStyle }}>
                     <img
                         src={poll.variant2ImageIconUrl}
-                        width={110}
-                        height={82}
-                        style={{ borderRadius: '12px' }}
+                        style={{ width: '100%', height: '118px', borderRadius: '12px' }}
                     />
 
                     <p style={cardTextStyle}>{poll.variant2Answer}</p>
