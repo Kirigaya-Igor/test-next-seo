@@ -4,11 +4,11 @@ export async function generateMetadata() {
         description: 'Test1',
         openGraph: {
             title: 'Test1',
-            images: '/test1.jpg',
+            images: 'https://is-next-seo.netlify.app/test1.jpg',
         },
         twitter: {
             title: 'Test1',
-            images: '/test1.jpg',
+            images: 'https://is-next-seo.netlify.app/test1.jpg',
             card: 'summary_large_image',
         },
     };
