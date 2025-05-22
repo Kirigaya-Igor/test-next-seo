@@ -14,8 +14,6 @@ export default async function DynamicImage() {
         position: 'absolute' as any,
         top: '4px',
         left: '26px',
-        display: 'flex',
-        flexDirection: 'column' as any,
         gap: '10px',
         width: '128px',
         height: '190px',
@@ -26,6 +24,7 @@ export default async function DynamicImage() {
     };
 
     const cardText = {
+        marginTop: '10px',
         fontSize: '12px',
         fontWeight: '600',
         lineHeight: '14px',
