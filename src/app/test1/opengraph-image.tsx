@@ -12,7 +12,6 @@ export default async function DynamicImage() {
 
     const cardStyle = {
         position: 'absolute' as any,
-        top: '4px',
         display: 'flex',
         flexDirection: 'column' as any,
         gap: '16px',
@@ -27,6 +26,7 @@ export default async function DynamicImage() {
         fontSize: '14px',
         fontWeight: '600',
         lineHeight: '16px',
+        color: '#ffffff',
     };
 
     return new ImageResponse(
@@ -37,8 +37,8 @@ export default async function DynamicImage() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    width: '100%',
-                    height: '100%',
+                    width: '400px',
+                    height: '400px',
                     backgroundColor: '#000000',
                 }}
             >
@@ -53,10 +53,10 @@ export default async function DynamicImage() {
                     <div
                         style={{
                             position: 'absolute',
-                            top: '130px',
+                            top: '50%',
                             left: '50%',
-                            width: '200px',
-                            height: '200px',
+                            width: '300px',
+                            height: '300px',
                             background:
                                 'linear-gradient(232.13deg, #fdb99b 0%, #cf8bf3 50%, #a770ef 100%) border-box',
                             borderRadius: '50%',
@@ -65,7 +65,14 @@ export default async function DynamicImage() {
                         }}
                     />
 
-                    <div style={{ left: '18px', transform: 'rotate(-5deg)', ...cardStyle }}>
+                    <div
+                        style={{
+                            top: '8px',
+                            left: '18px',
+                            transform: 'rotate(-5deg)',
+                            ...cardStyle,
+                        }}
+                    >
                         <img
                             src={poll.variant1ImageIconUrl}
                             style={{ width: '100%', height: '118px', borderRadius: '12px' }}
@@ -74,7 +81,14 @@ export default async function DynamicImage() {
                         <p style={cardTextStyle}>{poll.variant1Answer}</p>
                     </div>
 
-                    <div style={{ right: '18px', transform: 'rotate(5deg)', ...cardStyle }}>
+                    <div
+                        style={{
+                            top: '5px',
+                            right: '18px',
+                            transform: 'rotate(5deg)',
+                            ...cardStyle,
+                        }}
+                    >
                         <img
                             src={poll.variant2ImageIconUrl}
                             style={{ width: '100%', height: '118px', borderRadius: '12px' }}
