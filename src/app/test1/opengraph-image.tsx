@@ -10,7 +10,7 @@ export const contentType = 'image/png';
 export default async function DynamicImage() {
     const poll = await fetch(`https://backend.voicecoin.co/api/polls/29`).then((res) => res.json());
 
-    // const baseUrl = 'https://is-next-seo.netlify.app';
+    const baseUrl = 'https://is-next-seo.netlify.app';
 
     const cardStyle = {
         position: 'absolute' as any,
@@ -39,45 +39,45 @@ export default async function DynamicImage() {
         color: '#ffffff',
     };
 
-    // const progressBarContainerStyle = {
-    //     top: '400px',
-    //     left: '50%',
-    //     display: 'flex',
-    //     width: '60%',
-    //     padding: '2px',
-    //     border: '1px solid #424242',
-    //     borderRadius: '6px',
-    //     transform: 'translateX(-50%)',
-    // };
+    const progressBarContainerStyle = {
+        top: '400px',
+        left: '50%',
+        display: 'flex',
+        width: '60%',
+        padding: '2px',
+        border: '1px solid #424242',
+        borderRadius: '6px',
+        transform: 'translateX(-50%)',
+    };
 
-    // const progressBarBgStyle = {
-    //     display: 'flex',
-    //     width: '100%',
-    //     height: '4px',
-    //     backgroundColor: '#FFD3BF',
-    //     borderRadius: '4px',
-    // };
+    const progressBarBgStyle = {
+        display: 'flex',
+        width: '100%',
+        height: '4px',
+        backgroundColor: '#FFD3BF',
+        borderRadius: '4px',
+    };
 
-    // const leftValue = +((poll.variant1Votes || 0) / Math.pow(10, 9)).toFixed(0);
-    // const rightValue = +((poll.variant2Votes || 0) / Math.pow(10, 9)).toFixed(0);
+    const leftValue = +((poll.variant1Votes || 0) / Math.pow(10, 9)).toFixed(0);
+    const rightValue = +((poll.variant2Votes || 0) / Math.pow(10, 9)).toFixed(0);
 
-    // const fillPercentage = 50 + ((leftValue - rightValue) / Math.max(leftValue, rightValue)) * 50;
+    const fillPercentage = 50 + ((leftValue - rightValue) / Math.max(leftValue, rightValue)) * 50;
 
-    // const progressBarStyle = {
-    //     top: '0px',
-    //     left: '0px',
-    //     height: '4px',
-    //     width: `${fillPercentage || 50}%`,
-    //     backgroundColor: '#A770EF',
-    //     borderRadius: '4px',
-    //     zIndex: '1',
-    // };
+    const progressBarStyle = {
+        top: '0px',
+        left: '0px',
+        height: '4px',
+        width: `${fillPercentage || 50}%`,
+        backgroundColor: '#A770EF',
+        borderRadius: '4px',
+        zIndex: '1',
+    };
 
-    // const progressBarImage = {
-    //     top: '0px',
-    //     left: `${fillPercentage || 50}%`,
-    //     transform: 'translate(-50%, -50%)',
-    // };
+    const progressBarImage = {
+        top: '0px',
+        left: `${fillPercentage || 50}%`,
+        transform: 'translate(-50%, -50%)',
+    };
 
     return new ImageResponse(
         (
@@ -160,7 +160,7 @@ export default async function DynamicImage() {
                         sef sefse f sef se nsekjfnk
                     </p>
 
-                    {/* <div
+                    <div
                         style={{
                             position: 'absolute',
                             ...progressBarContainerStyle,
@@ -190,7 +190,7 @@ export default async function DynamicImage() {
                                 style={{ position: 'absolute', ...progressBarImage }}
                             />
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             </div>
         ),
