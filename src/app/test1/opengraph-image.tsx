@@ -2,13 +2,15 @@ import { ImageResponse } from 'next/og';
 
 export const size = {
     width: 700,
-    height: 550,
+    height: 580,
 };
 
 export const contentType = 'image/png';
 
 export default async function DynamicImage() {
-    const poll = await fetch(`https://backend.voicecoin.co/api/polls/7`).then((res) => res.json());
+    const poll = await fetch(`https://backend.voicecoin.co/api/polls/29`).then((res) => res.json());
+
+    const baseUrl = 'http://localhost:3000';
 
     const cardStyle = {
         position: 'absolute' as any,
@@ -29,13 +31,62 @@ export default async function DynamicImage() {
         color: '#ffffff',
     };
 
+    const cardTitleStyle = {
+        margin: '484px auto 0',
+        fontSize: '34px',
+        fontWeight: '600',
+        lineHeight: '40px',
+        color: '#ffffff',
+    };
+
+    const progressBarContainerStyle = {
+        top: '400px',
+        left: '50%',
+        display: 'flex',
+        width: '60%',
+        padding: '2px',
+        border: '1px solid #424242',
+        borderRadius: '6px',
+        transform: 'translateX(-50%)',
+    };
+
+    const progressBarBgStyle = {
+        display: 'flex',
+        width: '100%',
+        height: '4px',
+        backgroundColor: '#FFD3BF',
+        borderRadius: '4px',
+    };
+
+    const leftValue = +((poll.variant1Votes || 0) / Math.pow(10, 9)).toFixed(0);
+    const rightValue = +((poll.variant2Votes || 0) / Math.pow(10, 9)).toFixed(0);
+
+    const fillPercentage = 50 + ((leftValue - rightValue) / Math.max(leftValue, rightValue)) * 50;
+
+    const progressBarStyle = {
+        top: '0px',
+        left: '0px',
+        height: '4px',
+        width: `${fillPercentage || 50}%`,
+        backgroundColor: '#A770EF',
+        borderRadius: '4px',
+        zIndex: '1',
+    };
+
+    const progressBarImage = {
+        top: '0px',
+        left: `${fillPercentage || 50}%`,
+        width: '40px',
+        height: '40px',
+        transform: 'translate(-50%, -50%)',
+    };
+
     return new ImageResponse(
         (
             <div
                 style={{
                     position: 'relative',
                     display: 'flex',
-                    alignItems: 'center',
                     justifyContent: 'center',
                     width: '100%',
                     height: '100%',
@@ -67,7 +118,7 @@ export default async function DynamicImage() {
                 >
                     <div
                         style={{
-                            top: '8px',
+                            top: '20px',
                             left: '26px',
                             transform: 'rotate(-5deg)',
                             ...cardStyle,
@@ -83,7 +134,7 @@ export default async function DynamicImage() {
 
                     <div
                         style={{
-                            top: '5px',
+                            top: '18px',
                             right: '26px',
                             transform: 'rotate(5deg)',
                             ...cardStyle,
@@ -95,6 +146,50 @@ export default async function DynamicImage() {
                         />
 
                         <p style={cardTextStyle}>{poll.variant2Answer}</p>
+                    </div>
+
+                    <p
+                        style={{
+                            textAlign: 'center',
+                            textOverflow: 'ellipsis',
+                            display: '-webkit-box',
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: 'vertical',
+                            ...cardTitleStyle,
+                        }}
+                    >
+                        {poll.title} sefjh jske nnsefh kjs ksenfk nsekjfn kjsenfkj nsekfn kjsenfkj
+                        sef sefse f sef se nsekjfnk
+                    </p>
+
+                    <div
+                        style={{
+                            position: 'absolute',
+                            ...progressBarContainerStyle,
+                        }}
+                    >
+                        <div
+                            style={{
+                                position: 'relative',
+                                ...progressBarBgStyle,
+                            }}
+                        >
+                            <div
+                                style={{
+                                    position: 'absolute',
+                                    ...progressBarStyle,
+                                }}
+                            ></div>
+
+                            <img
+                                src={
+                                    leftValue >= rightValue
+                                        ? `${baseUrl}/images/voteProgress/voice-coin-left.png`
+                                        : `${baseUrl}/images/voteProgress/voice-coin-right.png`
+                                }
+                                style={{ position: 'absolute', ...progressBarImage }}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
