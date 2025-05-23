@@ -160,7 +160,7 @@ export default async function DynamicImage() {
                         sef sefse f sef se nsekjfnk
                     </p>
 
-                    <div
+                    {/* <div
                         style={{
                             position: 'absolute',
                             ...progressBarContainerStyle,
@@ -190,7 +190,7 @@ export default async function DynamicImage() {
                                 style={{ position: 'absolute', ...progressBarImage }}
                             />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         ),
