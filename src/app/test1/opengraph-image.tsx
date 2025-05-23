@@ -10,7 +10,7 @@ export const contentType = 'image/png';
 export default async function DynamicImage() {
     const poll = await fetch(`https://backend.voicecoin.co/api/polls/29`).then((res) => res.json());
 
-    const baseUrl = 'http://localhost:3000';
+    const baseUrl = 'https://is-next-seo.netlify.app';
 
     const cardStyle = {
         position: 'absolute' as any,
@@ -76,8 +76,6 @@ export default async function DynamicImage() {
     const progressBarImage = {
         top: '0px',
         left: `${fillPercentage || 50}%`,
-        width: '40px',
-        height: '40px',
         transform: 'translate(-50%, -50%)',
     };
 
@@ -187,6 +185,8 @@ export default async function DynamicImage() {
                                         ? `${baseUrl}/images/voteProgress/voice-coin-left.png`
                                         : `${baseUrl}/images/voteProgress/voice-coin-right.png`
                                 }
+                                width={40}
+                                height={40}
                                 style={{ position: 'absolute', ...progressBarImage }}
                             />
                         </div>
