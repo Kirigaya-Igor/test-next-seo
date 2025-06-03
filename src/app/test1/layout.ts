@@ -1,13 +1,17 @@
 export async function generateMetadata() {
+    const imageUrl = 'https://is-next-seo.netlify.app/test1/opengraph-image';
+
     return {
         metadataBase: new URL('https://is-next-seo.netlify.app'),
         title: 'Test1 title',
         openGraph: {
             title: 'Test1 title',
+            images: [imageUrl],
         },
         twitter: {
-            title: 'Test1 title',
             card: 'summary_large_image',
+            title: 'Test1 title',
+            images: [imageUrl],
         },
     };
 }
