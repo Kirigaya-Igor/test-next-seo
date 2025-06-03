@@ -1,5 +1,5 @@
 export async function generateMetadata() {
-    const imageUrl = 'https://is-next-seo.netlify.app/test1/opengraph-image';
+    const imageUrl = 'https://is-next-seo.netlify.app/test1/opengraph-image.tsx';
 
     return {
         metadataBase: new URL('https://is-next-seo.netlify.app'),
