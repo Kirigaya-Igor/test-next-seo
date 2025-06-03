@@ -1,12 +1,12 @@
 export async function generateMetadata() {
     return {
         metadataBase: new URL('https://is-next-seo.netlify.app'),
-        title: 'Test1 title',
+        title: 'Test1 Title',
         openGraph: {
-            title: 'Test1 title',
+            title: 'Test1 Title',
         },
         twitter: {
-            title: 'Test1 title',
+            title: 'Test1 Title',
             card: 'summary_large_image',
         },
     };
