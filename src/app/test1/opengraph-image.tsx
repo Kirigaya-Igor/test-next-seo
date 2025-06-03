@@ -8,7 +8,7 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function DynamicImage() {
-    const poll = await fetch(`https://backend.voicecoin.co/api/polls/29`).then((res) => res.json());
+    const poll = await fetch(`https://backend.voicecoin.co/api/polls/7`).then((res) => res.json());
 
     const baseUrl = 'https://is-next-seo.netlify.app';
 
